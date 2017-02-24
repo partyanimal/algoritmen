@@ -11,6 +11,7 @@ package algorithmen;
 public class LinkedList<T> 
 {
 	private Node head;
+	private int size;
 	/**
 	 * constructor for the linked list with one element
 	 * 
@@ -19,7 +20,7 @@ public class LinkedList<T>
 	public LinkedList(T elemenet)
 	{
 		head = new Node(elemenet);
-		
+		size = 1;
 	}
 	/**
 	 * appends the element to the linked list
@@ -29,7 +30,7 @@ public class LinkedList<T>
 	{
 		Node newNode = new Node(element, head);
 		head = newNode;
-		
+		size ++;
 	}
 	/**
 	 * 
@@ -42,8 +43,20 @@ public class LinkedList<T>
 		return head.get();
 		
 	}
+	/*
+	 * 
+	 * return size list
+	 */
+	public int size()
+	{
+		return size;
+	}
 	
-	
+	public boolean isEmpty()
+	{
+		return size == 0;
+		
+	}
 	private class Node
 	{
 		private T element;
