@@ -145,11 +145,8 @@ public class LinkedList<T>
 			
 			if(cursor.get().equals(element))return true;
 		}
-		
-		
-		while(cursor.next != null){
+		while(cursor.next != null);
 			
-		}
 		return false;
 	}
 	
