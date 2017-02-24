@@ -37,6 +37,7 @@ public class LinkedList<T>
 	
 	
 	private int count(){
+		if(head ==null) return 0;
 		int total = 1;
 		while(head.next() != null){
 			total++;
@@ -71,6 +72,7 @@ public class LinkedList<T>
 	
 	public T first()
 	{
+		if(head == null)return null;
 		return head.get();
 		
 	}
@@ -88,6 +90,19 @@ public class LinkedList<T>
 		return size == 0;
 		
 	}
+	
+	/*
+	 * return the last element of the list
+	 */
+	public T last(){
+		Node cursor = head;
+		while(cursor.next !=null){
+			cursor = cursor.next();
+		}
+		return cursor.get();
+	}
+	
+	
 	private class Node
 	{
 		private T element;
