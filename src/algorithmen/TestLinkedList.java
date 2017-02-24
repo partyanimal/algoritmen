@@ -61,5 +61,10 @@ public void testLast(){
 	assertEquals("2",linkedlist.first());
 	assertEquals("1",linkedlist.last());
 }
+
+@Test
+public void testFind(){
+	assertTrue(linkedlist.find("1"));
+}
 }
 
