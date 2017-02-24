@@ -12,6 +12,13 @@ public class LinkedList<T>
 {
 	private Node head;
 	private int size;
+	
+	public LinkedList()
+	
+	{
+		head = null;
+		size = 0;
+	}
 	/**
 	 * constructor for the linked list with one element
 	 * 
@@ -22,6 +29,30 @@ public class LinkedList<T>
 		head = new Node(elemenet);
 		size = 1;
 	}
+	
+	private LinkedList(Node node){
+		head = node;
+		size = count();
+	}
+	
+	
+	private int count(){
+		int total = 1;
+		while(head.next() != null){
+			total++;
+		}
+		return total;
+	}
+	/*
+	 * 
+	 * return the linked list without the head element
+	 */
+	public LinkedList<T>tail()
+	{return new LinkedList<T>(head.next());
+		
+	}
+	
+	
 	/**
 	 * appends the element to the linked list
 	 * @param element
@@ -78,6 +109,12 @@ public class LinkedList<T>
 		{
 			return element;
 		}
+		
+		public Node next()
+		{
+			return next;
+		}
 	}
+	
 	
 }

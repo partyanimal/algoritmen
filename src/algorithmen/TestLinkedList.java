@@ -17,7 +17,7 @@ public class TestLinkedList {
 	public void testFirst() {
 			
 			assertEquals("1",linkedlist.first());
-			assertEquals("1", linkedlist.size());
+			assertEquals(1, linkedlist.size());
 			assertEquals(false,linkedlist.isEmpty());
 	}
 		@Test
@@ -25,6 +25,26 @@ public class TestLinkedList {
 		{
 			linkedlist.preappend("2");
 			assertEquals("2",linkedlist.first());
-			assertEquals("2",linkedlist.size());
+			assertEquals(2,linkedlist.size());
 		}
+		
+
+@Test
+public void testEmptyList(){
+	
+	LinkedList<Integer>linkedlist = new LinkedList<Integer>();
+	assertEquals(0,linkedlist.size());
+	assertEquals(true,linkedlist.isEmpty());
 }
+
+
+@Test
+public void testTail(){
+	linkedlist.preappend("2");
+	LinkedList<String> result = linkedlist.tail();
+	assertEquals("1", result.first());
+	assertEquals(1,result.size());
+	
+}
+}
+
